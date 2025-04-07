@@ -39,7 +39,7 @@ public class App implements RequestHandler<S3Event, String> {
                 context.getLogger().log("Size: " + objectSize);
                 
                 // Create notification message
-                String subject = String.format("[%s] New File Upload Notification", environment.toUpperCase());
+                String subject = String.format("[%s] New File Upload Notification", environment.toUpperCase());   
                 String message = String.format(
                     "A new file has been uploaded to your S3 bucket.\n\n" +
                     "Environment: %s\n" +
@@ -73,6 +73,6 @@ public class App implements RequestHandler<S3Event, String> {
             .message(message)
             .build();
         
-        return snsClient.publish(request);
+        return snsClient.publish(request); 
     }
 }
