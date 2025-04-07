@@ -32,7 +32,9 @@ jobs:
 
       - name: Build SAM Application
         run: |
+          cd FileUploadFunction
           mvn clean package
+          cd ..
           sam build
 
       - name: Deploy to Development
