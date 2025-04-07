@@ -44,8 +44,8 @@ jobs:
             --stack-name weekeightlabdev \
             --parameter-overrides Environment=dev EmailAddress=${{ secrets.EMAIL_ADDRESS }} \
             --capabilities CAPABILITY_IAM \
-            --no-fail-on-empty-changeset
-            --no-confirm-changeset
+            --no-fail-on-empty-changeset \
+            --no-confirm-changeset \
             --region eu-west-1
 
       - name: Deploy to Production
@@ -55,6 +55,6 @@ jobs:
             --stack-name weekeightlabprod \
             --parameter-overrides Environment=prod EmailAddress=${{ secrets.EMAIL_ADDRESS }} \
             --capabilities CAPABILITY_IAM \
-            --no-fail-on-empty-changeset
-            --no-confirm-changeset
+            --no-fail-on-empty-changeset \
+            --no-confirm-changeset \
             --region eu-west-1
